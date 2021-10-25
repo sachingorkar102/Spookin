@@ -1,0 +1,11 @@
+name: Spookin
+version: ${project.version}
+main: com.github.sachin.spookin.Spookin
+api-version: 1.16
+api: []
+authors: [ sachingorkar ]
+softdepend: [ProtocolLib,Tweakin]
+description: Plugin for Halloween Plugin Jam
+commands:
+  spookin:
+    description: The core command for plugin

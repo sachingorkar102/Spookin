@@ -1,0 +1,21 @@
+
+curses:
+  enabled: true
+
+scarecrow:
+  enabled: true  
+
+monsterbox:
+  enabled: true  
+
+trick-or-treat-basket:
+  enabled: true  
+
+candies:
+  enabled: true  
+
+spookier-mobs:
+  enabled: true  
+
+jack-o-launcher:
+  enabled: true

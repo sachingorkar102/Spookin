@@ -1,0 +1,78 @@
+dagger:
+  id: WOODEN_SWORD
+  display: "&6Dagger"
+  lore:
+    - "&7Right click to get your own blood on dagger"
+    - "&7Hit other player with dagger to get their blood instead"
+  options.model: 1
+
+imbued-dagger:
+  id: WOODEN_SWORD
+  display: "&6Imbued Dagger"
+  lore:
+    - "&7Imbued By: %player%"    
+  options.model: 2  
+ 
+scarecrow:
+  id: PLAYER_HEAD
+  display: "&6Scare Crow"
+  lore:
+    - "&6Scares away mobs in a radius of 15 blocks"
+    - "&7Right click on solid block to place"
+    - "&7Shift+Right click on scarecrow to get it back"
+  options:
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjRkMWVkZGVhYzgzMGQ5ZGVhMTJiODg4OTk3YjI4OWZhODRiNjljOTAxZjJjNTc0NGFmOTc1ZmM0OTRlYmUzIn19fQ== 
+
+
+monsterbox:
+  id: SPAWNER
+  display: "&aMonster Box"    
+
+trick-or-treat-basket:
+  id: PLAYER_HEAD
+  display: "&6Trick or Treat Basket"
+  lore:
+    - "&7Empty"
+    - "&7Right click in air to fill in contents"
+  options:
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTUwZjcxMmU4NzdkZmQ5MTBjOTdmMzgxOWEyMDBhMDVkNDllZTZiODNiNTkyNjg2ZTA5OWI5ZWNkNDQzZjIyOCJ9fX0=
+
+swirly-pop:
+  id: SWEET_BERRIES
+  display: "&eSwirly Pop"
+  options:
+    model: 4
+
+candy:
+  id: SWEET_BERRIES
+  display: "&eCandy"
+  options:
+    model: 5
+    
+candy-bar:
+  id: SWEET_BERRIES
+  display: "&eCandy Bar"
+  options:
+    model: 6  
+    
+witch-hat:
+  id: WOODEN_SWORD
+  display: "&6Witch Hat"
+  lore:
+    - "&7Right click in air to equip"
+  options:
+    model: 3  
+
+jack-o-launcher:
+  id: WOODEN_SWORD
+  display: "&6Jack O' Launcher"
+  options:
+    model: 9
+  
+launcher-ammo:
+  id: REDSTONE
+  display: "&eLauncher Ammo"
+  options:
+    model: 8
+
+      
