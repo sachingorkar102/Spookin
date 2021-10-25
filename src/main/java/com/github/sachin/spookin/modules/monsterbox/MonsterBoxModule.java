@@ -7,6 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 import com.github.sachin.spookin.BaseItem;
+import com.github.sachin.spookin.Spookin;
 import com.github.sachin.spookin.manager.Module;
 import com.github.sachin.spookin.modules.trickortreatbasket.TrickOrTreatBasketModule;
 import com.github.sachin.spookin.utils.Advancements;
@@ -17,6 +18,7 @@ import org.bukkit.Chunk;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.World;
@@ -37,10 +39,12 @@ import org.bukkit.entity.Zombie;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.server.ServerLoadEvent;
 import org.bukkit.event.server.ServerLoadEvent.LoadType;
 import org.bukkit.event.world.ChunkLoadEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
@@ -50,6 +54,7 @@ public class MonsterBoxModule extends BaseItem implements Listener{
 
 
     public static final Set<Location> boxes = new HashSet<>();
+    public static final NamespacedKey boxmonsters = Spookin.getKey("box-monsters");
 
     public MonsterBoxModule(){
         super();
@@ -62,6 +67,15 @@ public class MonsterBoxModule extends BaseItem implements Listener{
         if(isSimilar(e.getItem()) && e.getAction()==Action.RIGHT_CLICK_BLOCK){
             e.setCancelled(true);
             spawnMonsterBox(e.getClickedBlock().getRelative(e.getBlockFace()));
+        }
+    }
+
+    @EventHandler
+    public void onDeath(EntityDeathEvent e){
+        if(e.getEntity().getPersistentDataContainer().has(boxmonsters, PersistentDataType.STRING)){
+            if(plugin.RANDOM.nextInt(10)==1){
+                e.getDrops().add(getItem());
+            }
         }
     }
 
@@ -191,6 +205,7 @@ public class MonsterBoxModule extends BaseItem implements Listener{
                                         double my = (plugin.RANDOM.nextFloat() - 0.5) * motionMultiplier;
                                         double mz = (plugin.RANDOM.nextFloat() - 0.5) * motionMultiplier;
                                         l.setVelocity(l.getVelocity().add(new Vector(mx,my,mz)));
+                                        l.getPersistentDataContainer().set(boxmonsters, PersistentDataType.STRING, "");
                                         
 
                                     }

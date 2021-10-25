@@ -264,12 +264,12 @@ public class JackOLauncherModule extends BaseModule implements Listener{
                     if(helper.fireWork != null){
                         projectile.setGravity(false);
                     }
-                    if(e.getHand()==EquipmentSlot.HAND){
-                        player.swingMainHand();
-                    }
-                    else if(e.getHand()==EquipmentSlot.OFF_HAND){
-                        player.swingOffHand();
-                    }
+                    // if(e.getHand()==EquipmentSlot.HAND){
+                    //     player.swingMainHand();
+                    // }
+                    // else if(e.getHand()==EquipmentSlot.OFF_HAND){
+                    //     player.swingOffHand();
+                    // }
                     if(player.getGameMode()==GameMode.SURVIVAL){
                         ammo.setAmount(ammo.getAmount()-1);
                     }

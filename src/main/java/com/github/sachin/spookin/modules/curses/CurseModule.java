@@ -1,6 +1,7 @@
 package com.github.sachin.spookin.modules.curses;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -75,6 +76,11 @@ public class CurseModule extends BaseModule implements Listener{
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
         Advancements.awardAdvancement("root", e.getPlayer());
+        for(NamespacedKey key : Arrays.asList(SConstants.LAUNCHER_RECIPE,SConstants.BASKET_RECIPE,SConstants.DAGGER_RECIPE)){
+            if(e.getPlayer().hasDiscoveredRecipe(key)){
+                e.getPlayer().discoverRecipe(key);
+            }
+        }
     }
 
     @EventHandler

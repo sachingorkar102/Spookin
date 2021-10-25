@@ -214,7 +214,7 @@ public class TrickOrTreatBasketModule extends BaseItem implements Listener{
         ItemStack basket = this.item.clone();
         NBTItem nbti = new NBTItem(basket);
         nbti.setString("random-uuid", UUID.randomUUID().toString());
-        // nbti.setString(LOCKED, "true");
+        nbti.setString(LOCKED, "true");
         nbti.setString(CONTENTS_KEY, InventoryUtils.itemStackListToBase64(items));
         basket = nbti.getItem();
         ItemMeta meta = basket.getItemMeta();
